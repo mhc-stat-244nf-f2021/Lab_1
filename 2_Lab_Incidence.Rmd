@@ -22,7 +22,7 @@ If you using RStudio in the same place that you were for Lab 0, then you have al
 # install.packages("incidence)
 
 library(incidence)
-library(outbreaks)
+
 ```
 
 ## Examining the data: Simulated Ebola data
@@ -54,7 +54,6 @@ data("ebola_sim")
 #### The `ebola_linelist` data frame lists new cases of ebola and associated information about the cases, outcomes, etc. We can compute the daily incidence using the `incidence` function from the *incidence* package. Run the R code below to see how this works.
 
 ```{r}
-ebola_linelist <- ebola_sim$linelist
 ebola_incidence <- incidence(dates = ebola_linelist$date_of_onset, interval = 1)
 str(ebola_incidence)
 ```
@@ -76,7 +75,7 @@ plot(ebola_incidence)
 
 ```
 
-#### We can do the same thing, but change the time scale to semi-weekly, starting on Saturday. Create a new object, `ebola_incidence_monthly` by modifying the code we used to create `ebola_incidence`. Use the help function for incidence (`?incidence`) to determine how to specify an interval of a month. Then plot the semi-weekly incidence. Do this in the code chunk below:
+#### We can do the same thing, but change the time scale to monthly. Create a new object, `ebola_incidence_monthly` by modifying the code we used to create `ebola_incidence`. Use the help function for incidence (`?incidence`) to determine how to specify an interval of a month. Then plot the semi-weekly incidence. Do this in the code chunk below:
 
 ```{r}
 
